@@ -6,14 +6,19 @@ import List from './pages/List'
 
 function AppRouter() {
   return (
-    <Router>
-        <ul>
-            <li> <Link to="/">首页</Link> </li>
-            <li><Link to="/list/">列表</Link> </li>
-        </ul>
-        <Route path="/" exact component={Index} />
-        <Route path="/list/" component={List} />
-    </Router>
+    <div>
+      <div>header</div>
+      <Router>
+          <ul>
+              <li> <Link to="/">首页</Link> </li>
+              <li><Link to="/list/123">列表</Link> </li>
+          </ul>
+          <Route path="/" exact component={Index} />
+          <Route path="/list/:id" component={List} />
+      </Router>
+      <div>footer</div>
+
+    </div>
   );
 }
 export default AppRouter;
